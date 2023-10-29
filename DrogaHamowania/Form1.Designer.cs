@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.btnStop = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
             this.samochod = new System.Windows.Forms.PictureBox();
@@ -71,7 +72,7 @@
             // 
             // btnStop
             // 
-            this.btnStop.Location = new System.Drawing.Point(421, 284);
+            this.btnStop.Location = new System.Drawing.Point(741, 285);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(60, 37);
             this.btnStop.TabIndex = 31;
@@ -81,7 +82,7 @@
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(342, 284);
+            this.btnStart.Location = new System.Drawing.Point(675, 285);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(60, 37);
             this.btnStart.TabIndex = 30;
@@ -109,6 +110,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Location = new System.Drawing.Point(122, 67);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(15, 13);
@@ -118,45 +120,55 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(122, 140);
+            this.label5.BackColor = System.Drawing.Color.Gray;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label5.Location = new System.Drawing.Point(122, 137);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(32, 13);
+            this.label5.Size = new System.Drawing.Size(36, 16);
             this.label5.TabIndex = 25;
             this.label5.Text = "km/h";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 265);
+            this.label4.BackColor = System.Drawing.Color.Gray;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label4.Location = new System.Drawing.Point(15, 262);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(115, 13);
+            this.label4.Size = new System.Drawing.Size(143, 16);
             this.label4.TabIndex = 23;
             this.label4.Text = "Czas Reakcji Kierowcy";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 189);
+            this.label3.BackColor = System.Drawing.Color.Gray;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label3.Location = new System.Drawing.Point(15, 195);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 13);
+            this.label3.Size = new System.Drawing.Size(80, 16);
             this.label3.TabIndex = 21;
             this.label3.Text = "Tarcie opon";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 104);
+            this.label2.BackColor = System.Drawing.Color.Gray;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.Location = new System.Drawing.Point(15, 114);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 13);
+            this.label2.Size = new System.Drawing.Size(132, 16);
             this.label2.TabIndex = 19;
             this.label2.Text = "Prędkość samohodu";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 25);
+            this.label1.BackColor = System.Drawing.Color.Gray;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(12, 41);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(219, 13);
+            this.label1.Size = new System.Drawing.Size(271, 16);
             this.label1.TabIndex = 17;
             this.label1.Text = "Nachylenie samochodu (+ ku górze, - w dół )";
             // 
@@ -219,18 +231,23 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(69, 288);
+            this.label7.BackColor = System.Drawing.Color.Gray;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label7.Location = new System.Drawing.Point(69, 285);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(12, 13);
+            this.label7.Size = new System.Drawing.Size(14, 16);
             this.label7.TabIndex = 36;
             this.label7.Text = "s";
             // 
             // lblwynik
             // 
             this.lblwynik.AutoSize = true;
-            this.lblwynik.Location = new System.Drawing.Point(232, 324);
+            this.lblwynik.BackColor = System.Drawing.Color.Gray;
+            this.lblwynik.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblwynik.ForeColor = System.Drawing.Color.Black;
+            this.lblwynik.Location = new System.Drawing.Point(506, 336);
             this.lblwynik.Name = "lblwynik";
-            this.lblwynik.Size = new System.Drawing.Size(183, 13);
+            this.lblwynik.Size = new System.Drawing.Size(229, 16);
             this.lblwynik.TabIndex = 38;
             this.lblwynik.Text = "Całkowita droga hamowania wynosi: ";
             // 
@@ -270,9 +287,9 @@
             this.dataGridViewTextBoxColumn11,
             this.dataGridViewTextBoxColumn12});
             this.wynikiDataGridView.DataSource = this.wynikiBindingSource1;
-            this.wynikiDataGridView.Location = new System.Drawing.Point(235, 25);
+            this.wynikiDataGridView.Location = new System.Drawing.Point(289, 25);
             this.wynikiDataGridView.Name = "wynikiDataGridView";
-            this.wynikiDataGridView.Size = new System.Drawing.Size(566, 253);
+            this.wynikiDataGridView.Size = new System.Drawing.Size(512, 253);
             this.wynikiDataGridView.TabIndex = 38;
             // 
             // dataGridViewTextBoxColumn7
@@ -315,6 +332,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(821, 450);
             this.Controls.Add(this.wynikiDataGridView);
             this.Controls.Add(this.lblwynik);
@@ -333,8 +352,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Droga Hamowania";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.samochod)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numNachylenie)).EndInit();
