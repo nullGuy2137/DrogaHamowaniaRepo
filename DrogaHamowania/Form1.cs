@@ -26,23 +26,35 @@ namespace DrogaHamowania
         float nachylenie, tarcie, reakcja;
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'dBwynikiDataSet.Wyniki' . Możesz go przenieść lub usunąć.
             this.wynikiTableAdapter.Fill(this.dBwynikiDataSet.Wyniki);
-            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'dBwynikiDataSet.Wyniki' . Możesz go przenieść lub usunąć.
-
+            
         }
 
 
         //to jest od animacji ruszania się samochodu, odpala się przez bool rozpoczete a ten się zemienia przez przyciski Start i stop
         private void timerAnimacjaHamowania_Tick(object sender, EventArgs e)
         {
-            if (rozpoczete == true && (samochod.Left + predkosc) <= Convert.ToInt32((calkowitaDrogaHamowania*1000)/800))
+
+            double zwalnianie = predkosc;
+            int zwalnianie_zaokroglane =Convert.ToInt32( Math.Floor(zwalnianie*0.5)); 
+            if (rozpoczete == true && samochod.Left<700 && predkosc>3)
             {
                 
-                if (predkosc >= 0)
+                if (predkosc > 0)
                 {
                     samochod.Left += Convert.ToInt32(predkosc);
-                    predkosc -= 1;
+                    if (samochod.Left<=739/2)
+                    {
+                        predkosc -= 1;
+                    }
+                    else
+                    {
+                        predkosc -= zwalnianie_zaokroglane;
+                        if (predkosc == 10)
+                        {
+                            timerAnimacjaHamowania.Enabled = false;
+                        }
+                    }
 
                 }
                 //predkosc = predkosc - 1;
@@ -66,7 +78,7 @@ namespace DrogaHamowania
             tarcie = (float)(numTarcie.Value);
             reakcja = (float)(numReakcja.Value);
             calkowitaDrogaHamowania = (float)(0.278 * reakcja * predkosc) + (predkosc * predkosc) / (254 * (tarcie + nachylenie));
-            AdddataToDatabase(predkosc, nachylenie, tarcie, reakcja, calkowitaDrogaHamowania.ToString("0.00"));
+            AdddataToDatabase(predkosc, nachylenie.ToString("0.00"), tarcie, reakcja, calkowitaDrogaHamowania.ToString("0.00"));
             interwal = 60;
             rozpoczete = true;
             lblwynik.Text = "Calkowita droga hamowania wynosi: " + calkowitaDrogaHamowania.ToString("0.00")+"m";
@@ -78,7 +90,24 @@ namespace DrogaHamowania
 
         }
 
-        private void AdddataToDatabase(float predkosc, float nachylenie, float tarcie, float reakcja, string calkowitaDrogaHamowania)
+        private void wynikiDataGridView_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void samochod_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            samochod.Left = 12;
+            rozpoczete = false;
+            timerAnimacjaHamowania.Enabled = false;
+        }
+
+        private void AdddataToDatabase(float predkosc, string nachylenie, float tarcie, float reakcja, string calkowitaDrogaHamowania)
         {
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
@@ -98,11 +127,6 @@ namespace DrogaHamowania
                 this.wynikiTableAdapter.Fill(this.dBwynikiDataSet.Wyniki);
             }
         }
-        private void btnStop_Click(object sender, EventArgs e)
-        {
-            samochod.Left = 12;
-            rozpoczete = false;
-            timerAnimacjaHamowania.Enabled = false;
-        }
+      
     }
 }

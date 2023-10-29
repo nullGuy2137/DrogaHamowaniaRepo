@@ -475,7 +475,7 @@ namespace DrogaHamowania {
                 this.columnId.AllowDBNull = false;
                 this.columnId.Unique = true;
                 this.columnpredkosc.MaxLength = 6;
-                this.columnnachylenie.MaxLength = 3;
+                this.columnnachylenie.MaxLength = 5;
                 this.columntarcie.MaxLength = 5;
                 this.columnreakcja.MaxLength = 5;
                 this.columndroga.MaxLength = 10;

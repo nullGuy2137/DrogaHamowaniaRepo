@@ -93,39 +93,39 @@ SELECT Id, predkosc, nachylenie, tarcie, reakcja, droga FROM Wyniki WHERE (Id = 
   <xs:element name="DBwynikiDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DBwynikiDataSet" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DBwynikiDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Wyniki" msprop:Generator_RowClassName="WynikiRow" msprop:Generator_RowEvHandlerName="WynikiRowChangeEventHandler" msprop:Generator_RowDeletedName="WynikiRowDeleted" msprop:Generator_RowDeletingName="WynikiRowDeleting" msprop:Generator_RowEvArgName="WynikiRowChangeEvent" msprop:Generator_TablePropName="Wyniki" msprop:Generator_RowChangedName="WynikiRowChanged" msprop:Generator_UserTableName="Wyniki" msprop:Generator_RowChangingName="WynikiRowChanging" msprop:Generator_TableClassName="WynikiDataTable" msprop:Generator_TableVarName="tableWyniki">
+        <xs:element name="Wyniki" msprop:Generator_RowEvHandlerName="WynikiRowChangeEventHandler" msprop:Generator_RowDeletedName="WynikiRowDeleted" msprop:Generator_RowDeletingName="WynikiRowDeleting" msprop:Generator_RowEvArgName="WynikiRowChangeEvent" msprop:Generator_TablePropName="Wyniki" msprop:Generator_RowChangedName="WynikiRowChanged" msprop:Generator_UserTableName="Wyniki" msprop:Generator_RowChangingName="WynikiRowChanging" msprop:Generator_RowClassName="WynikiRow" msprop:Generator_TableClassName="WynikiDataTable" msprop:Generator_TableVarName="tableWyniki">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Id" msprop:Generator_UserColumnName="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnVarNameInTable="columnId" type="xs:int" />
-              <xs:element name="predkosc" msprop:Generator_UserColumnName="predkosc" msprop:Generator_ColumnPropNameInTable="predkoscColumn" msprop:Generator_ColumnPropNameInRow="predkosc" msprop:Generator_ColumnVarNameInTable="columnpredkosc" minOccurs="0">
+              <xs:element name="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_UserColumnName="Id" msprop:Generator_ColumnVarNameInTable="columnId" type="xs:int" />
+              <xs:element name="predkosc" msprop:Generator_ColumnPropNameInTable="predkoscColumn" msprop:Generator_ColumnPropNameInRow="predkosc" msprop:Generator_UserColumnName="predkosc" msprop:Generator_ColumnVarNameInTable="columnpredkosc" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="6" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="nachylenie" msprop:Generator_UserColumnName="nachylenie" msprop:Generator_ColumnPropNameInTable="nachylenieColumn" msprop:Generator_ColumnPropNameInRow="nachylenie" msprop:Generator_ColumnVarNameInTable="columnnachylenie" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="3" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="tarcie" msprop:Generator_UserColumnName="tarcie" msprop:Generator_ColumnPropNameInTable="tarcieColumn" msprop:Generator_ColumnPropNameInRow="tarcie" msprop:Generator_ColumnVarNameInTable="columntarcie" minOccurs="0">
+              <xs:element name="nachylenie" msprop:Generator_ColumnPropNameInTable="nachylenieColumn" msprop:Generator_ColumnPropNameInRow="nachylenie" msprop:Generator_UserColumnName="nachylenie" msprop:Generator_ColumnVarNameInTable="columnnachylenie" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="5" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="reakcja" msprop:Generator_UserColumnName="reakcja" msprop:Generator_ColumnPropNameInTable="reakcjaColumn" msprop:Generator_ColumnPropNameInRow="reakcja" msprop:Generator_ColumnVarNameInTable="columnreakcja" minOccurs="0">
+              <xs:element name="tarcie" msprop:Generator_ColumnPropNameInTable="tarcieColumn" msprop:Generator_ColumnPropNameInRow="tarcie" msprop:Generator_UserColumnName="tarcie" msprop:Generator_ColumnVarNameInTable="columntarcie" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="5" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="droga" msprop:Generator_ColumnPropNameInRow="droga" msprop:Generator_ColumnPropNameInTable="drogaColumn" msprop:Generator_ColumnVarNameInTable="columndroga" msprop:Generator_UserColumnName="droga" minOccurs="0">
+              <xs:element name="reakcja" msprop:Generator_ColumnPropNameInTable="reakcjaColumn" msprop:Generator_ColumnPropNameInRow="reakcja" msprop:Generator_UserColumnName="reakcja" msprop:Generator_ColumnVarNameInTable="columnreakcja" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="droga" msprop:Generator_UserColumnName="droga" msprop:Generator_ColumnPropNameInTable="drogaColumn" msprop:Generator_ColumnPropNameInRow="droga" msprop:Generator_ColumnVarNameInTable="columndroga" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />

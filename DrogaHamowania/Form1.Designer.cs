@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.btnStop = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
             this.samochod = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -48,10 +48,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.lblwynik = new System.Windows.Forms.Label();
             this.wynikiBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.wynikiBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.dBwynikiDataSet = new DrogaHamowania.DBwynikiDataSet();
-            this.wynikiTableAdapter = new DrogaHamowania.DBwynikiDataSetTableAdapters.WynikiTableAdapter();
-            this.tableAdapterManager = new DrogaHamowania.DBwynikiDataSetTableAdapters.TableAdapterManager();
             this.wynikiDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,46 +55,54 @@
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.wynikiBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dBwynikiDataSet = new DrogaHamowania.DBwynikiDataSet();
+            this.wynikiTableAdapter = new DrogaHamowania.DBwynikiDataSetTableAdapters.WynikiTableAdapter();
+            this.tableAdapterManager = new DrogaHamowania.DBwynikiDataSetTableAdapters.TableAdapterManager();
             ((System.ComponentModel.ISupportInitialize)(this.samochod)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numNachylenie)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numTarcie)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPredkosc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numReakcja)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wynikiBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wynikiDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wynikiBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dBwynikiDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wynikiDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnStop
+            // btnReset
             // 
-            this.btnStop.Location = new System.Drawing.Point(741, 285);
-            this.btnStop.Name = "btnStop";
-            this.btnStop.Size = new System.Drawing.Size(60, 37);
-            this.btnStop.TabIndex = 31;
-            this.btnStop.Text = "Stop";
-            this.btnStop.UseVisualStyleBackColor = true;
-            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
+            this.btnReset.BackColor = System.Drawing.Color.Red;
+            this.btnReset.Location = new System.Drawing.Point(741, 285);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(60, 37);
+            this.btnReset.TabIndex = 31;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnStart
             // 
+            this.btnStart.BackColor = System.Drawing.Color.Lime;
             this.btnStart.Location = new System.Drawing.Point(675, 285);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(60, 37);
             this.btnStart.TabIndex = 30;
             this.btnStart.Text = "Start";
-            this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.UseVisualStyleBackColor = false;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // samochod
             // 
             this.samochod.BackColor = System.Drawing.Color.Transparent;
-            this.samochod.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("samochod.BackgroundImage")));
+            this.samochod.Image = ((System.Drawing.Image)(resources.GetObject("samochod.Image")));
             this.samochod.Location = new System.Drawing.Point(12, 356);
             this.samochod.Name = "samochod";
             this.samochod.Size = new System.Drawing.Size(73, 50);
+            this.samochod.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.samochod.TabIndex = 29;
             this.samochod.TabStop = false;
+            this.samochod.Click += new System.EventHandler(this.samochod_Click);
             // 
             // panel1
             // 
@@ -113,7 +117,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.BackColor = System.Drawing.Color.Gray;
             this.label6.Location = new System.Drawing.Point(122, 67);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(15, 13);
@@ -258,26 +262,6 @@
             // 
             this.wynikiBindingSource.DataMember = "Wyniki";
             // 
-            // wynikiBindingSource1
-            // 
-            this.wynikiBindingSource1.DataMember = "Wyniki";
-            this.wynikiBindingSource1.DataSource = this.dBwynikiDataSet;
-            // 
-            // dBwynikiDataSet
-            // 
-            this.dBwynikiDataSet.DataSetName = "DBwynikiDataSet";
-            this.dBwynikiDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // wynikiTableAdapter
-            // 
-            this.wynikiTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.UpdateOrder = DrogaHamowania.DBwynikiDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.WynikiTableAdapter = this.wynikiTableAdapter;
-            // 
             // wynikiDataGridView
             // 
             this.wynikiDataGridView.AutoGenerateColumns = false;
@@ -294,6 +278,7 @@
             this.wynikiDataGridView.Name = "wynikiDataGridView";
             this.wynikiDataGridView.Size = new System.Drawing.Size(512, 253);
             this.wynikiDataGridView.TabIndex = 38;
+            this.wynikiDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.wynikiDataGridView_CellContentClick_1);
             // 
             // dataGridViewTextBoxColumn7
             // 
@@ -331,12 +316,32 @@
             this.dataGridViewTextBoxColumn12.HeaderText = "droga";
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
             // 
+            // wynikiBindingSource1
+            // 
+            this.wynikiBindingSource1.DataMember = "Wyniki";
+            this.wynikiBindingSource1.DataSource = this.dBwynikiDataSet;
+            // 
+            // dBwynikiDataSet
+            // 
+            this.dBwynikiDataSet.DataSetName = "DBwynikiDataSet";
+            this.dBwynikiDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // wynikiTableAdapter
+            // 
+            this.wynikiTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.UpdateOrder = DrogaHamowania.DBwynikiDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.WynikiTableAdapter = this.wynikiTableAdapter;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(820, 450);
             this.Controls.Add(this.wynikiDataGridView);
             this.Controls.Add(this.lblwynik);
@@ -345,7 +350,7 @@
             this.Controls.Add(this.numPredkosc);
             this.Controls.Add(this.numTarcie);
             this.Controls.Add(this.numNachylenie);
-            this.Controls.Add(this.btnStop);
+            this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.samochod);
             this.Controls.Add(this.panel1);
@@ -355,8 +360,12 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Droga Hamowania";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.samochod)).EndInit();
@@ -365,9 +374,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.numPredkosc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numReakcja)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wynikiBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wynikiDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wynikiBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dBwynikiDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wynikiDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -375,7 +384,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnStop;
+        private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.PictureBox samochod;
         private System.Windows.Forms.Panel panel1;
