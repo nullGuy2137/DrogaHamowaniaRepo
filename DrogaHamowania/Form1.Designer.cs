@@ -34,19 +34,39 @@
             this.samochod = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.timerAnimacjaHamowania = new System.Windows.Forms.Timer(this.components);
+            this.numNachylenie = new System.Windows.Forms.NumericUpDown();
+            this.numTarcie = new System.Windows.Forms.NumericUpDown();
+            this.numPredkosc = new System.Windows.Forms.NumericUpDown();
+            this.numReakcja = new System.Windows.Forms.NumericUpDown();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lblwynik = new System.Windows.Forms.Label();
+            this.wynikiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.wynikiBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dBwynikiDataSet = new DrogaHamowania.DBwynikiDataSet();
+            this.wynikiTableAdapter = new DrogaHamowania.DBwynikiDataSetTableAdapters.WynikiTableAdapter();
+            this.tableAdapterManager = new DrogaHamowania.DBwynikiDataSetTableAdapters.TableAdapterManager();
+            this.wynikiDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.samochod)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numNachylenie)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numTarcie)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPredkosc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numReakcja)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wynikiBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wynikiBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dBwynikiDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wynikiDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // btnStop
@@ -89,72 +109,38 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(604, 184);
+            this.label6.Location = new System.Drawing.Point(122, 67);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(186, 13);
+            this.label6.Size = new System.Drawing.Size(15, 13);
             this.label6.TabIndex = 27;
-            this.label6.Text = "Zaśnierzona/Oblodzona nawierzchnia";
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(607, 212);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(80, 17);
-            this.checkBox2.TabIndex = 26;
-            this.checkBox2.Text = "checkBox2";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.label6.Text = "%";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(604, 133);
+            this.label5.Location = new System.Drawing.Point(122, 140);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(102, 13);
+            this.label5.Size = new System.Drawing.Size(32, 13);
             this.label5.TabIndex = 25;
-            this.label5.Text = "Mokra nawierzchnia";
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(607, 149);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(80, 17);
-            this.checkBox1.TabIndex = 24;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.label5.Text = "km/h";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(604, 25);
+            this.label4.Location = new System.Drawing.Point(12, 265);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 13);
+            this.label4.Size = new System.Drawing.Size(115, 13);
             this.label4.TabIndex = 23;
-            this.label4.Text = "Siła hamulca";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(607, 59);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(51, 20);
-            this.textBox4.TabIndex = 22;
+            this.label4.Text = "Czas Reakcji Kierowcy";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(12, 189);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(99, 13);
+            this.label3.Size = new System.Drawing.Size(64, 13);
             this.label3.TabIndex = 21;
-            this.label3.Text = "Współrzynnik opon";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(15, 223);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(51, 20);
-            this.textBox3.TabIndex = 20;
+            this.label3.Text = "Tarcie opon";
             // 
             // label2
             // 
@@ -165,28 +151,14 @@
             this.label2.TabIndex = 19;
             this.label2.Text = "Prędkość samohodu";
             // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(15, 138);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(51, 20);
-            this.textBox2.TabIndex = 18;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 13);
+            this.label1.Size = new System.Drawing.Size(219, 13);
             this.label1.TabIndex = 17;
-            this.label1.Text = "Waga samochodu";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(15, 59);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(51, 20);
-            this.textBox1.TabIndex = 16;
+            this.label1.Text = "Nachylenie samochodu (+ ku górze, - w dół )";
             // 
             // timerAnimacjaHamowania
             // 
@@ -194,31 +166,185 @@
             this.timerAnimacjaHamowania.Interval = 20;
             this.timerAnimacjaHamowania.Tick += new System.EventHandler(this.timerAnimacjaHamowania_Tick);
             // 
+            // numNachylenie
+            // 
+            this.numNachylenie.Location = new System.Drawing.Point(15, 60);
+            this.numNachylenie.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
+            this.numNachylenie.Name = "numNachylenie";
+            this.numNachylenie.Size = new System.Drawing.Size(101, 20);
+            this.numNachylenie.TabIndex = 32;
+            // 
+            // numTarcie
+            // 
+            this.numTarcie.DecimalPlaces = 2;
+            this.numTarcie.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.numTarcie.Location = new System.Drawing.Point(15, 214);
+            this.numTarcie.Name = "numTarcie";
+            this.numTarcie.Size = new System.Drawing.Size(101, 20);
+            this.numTarcie.TabIndex = 33;
+            // 
+            // numPredkosc
+            // 
+            this.numPredkosc.Location = new System.Drawing.Point(15, 133);
+            this.numPredkosc.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numPredkosc.Name = "numPredkosc";
+            this.numPredkosc.Size = new System.Drawing.Size(101, 20);
+            this.numPredkosc.TabIndex = 34;
+            // 
+            // numReakcja
+            // 
+            this.numReakcja.DecimalPlaces = 2;
+            this.numReakcja.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.numReakcja.Location = new System.Drawing.Point(15, 281);
+            this.numReakcja.Name = "numReakcja";
+            this.numReakcja.Size = new System.Drawing.Size(48, 20);
+            this.numReakcja.TabIndex = 35;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(69, 288);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(12, 13);
+            this.label7.TabIndex = 36;
+            this.label7.Text = "s";
+            // 
+            // lblwynik
+            // 
+            this.lblwynik.AutoSize = true;
+            this.lblwynik.Location = new System.Drawing.Point(232, 324);
+            this.lblwynik.Name = "lblwynik";
+            this.lblwynik.Size = new System.Drawing.Size(183, 13);
+            this.lblwynik.TabIndex = 38;
+            this.lblwynik.Text = "Całkowita droga hamowania wynosi: ";
+            // 
+            // wynikiBindingSource
+            // 
+            this.wynikiBindingSource.DataMember = "Wyniki";
+            // 
+            // wynikiBindingSource1
+            // 
+            this.wynikiBindingSource1.DataMember = "Wyniki";
+            this.wynikiBindingSource1.DataSource = this.dBwynikiDataSet;
+            // 
+            // dBwynikiDataSet
+            // 
+            this.dBwynikiDataSet.DataSetName = "DBwynikiDataSet";
+            this.dBwynikiDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // wynikiTableAdapter
+            // 
+            this.wynikiTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.UpdateOrder = DrogaHamowania.DBwynikiDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.WynikiTableAdapter = this.wynikiTableAdapter;
+            // 
+            // wynikiDataGridView
+            // 
+            this.wynikiDataGridView.AutoGenerateColumns = false;
+            this.wynikiDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.wynikiDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12});
+            this.wynikiDataGridView.DataSource = this.wynikiBindingSource1;
+            this.wynikiDataGridView.Location = new System.Drawing.Point(235, 25);
+            this.wynikiDataGridView.Name = "wynikiDataGridView";
+            this.wynikiDataGridView.Size = new System.Drawing.Size(566, 253);
+            this.wynikiDataGridView.TabIndex = 38;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "predkosc";
+            this.dataGridViewTextBoxColumn8.HeaderText = "predkosc";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "nachylenie";
+            this.dataGridViewTextBoxColumn9.HeaderText = "nachylenie";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "tarcie";
+            this.dataGridViewTextBoxColumn10.HeaderText = "tarcie";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "reakcja";
+            this.dataGridViewTextBoxColumn11.HeaderText = "reakcja";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "droga";
+            this.dataGridViewTextBoxColumn12.HeaderText = "droga";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(821, 450);
+            this.Controls.Add(this.wynikiDataGridView);
+            this.Controls.Add(this.lblwynik);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.numReakcja);
+            this.Controls.Add(this.numPredkosc);
+            this.Controls.Add(this.numTarcie);
+            this.Controls.Add(this.numNachylenie);
             this.Controls.Add(this.btnStop);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.samochod);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.samochod)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numNachylenie)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numTarcie)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPredkosc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numReakcja)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wynikiBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wynikiBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dBwynikiDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wynikiDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -231,18 +357,36 @@
         private System.Windows.Forms.PictureBox samochod;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Timer timerAnimacjaHamowania;
+        private System.Windows.Forms.NumericUpDown numNachylenie;
+        private System.Windows.Forms.NumericUpDown numTarcie;
+        private System.Windows.Forms.NumericUpDown numPredkosc;
+        private System.Windows.Forms.NumericUpDown numReakcja;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblwynik;
+        private System.Windows.Forms.BindingSource wynikiBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private DBwynikiDataSet dBwynikiDataSet;
+        private System.Windows.Forms.BindingSource wynikiBindingSource1;
+        private DBwynikiDataSetTableAdapters.WynikiTableAdapter wynikiTableAdapter;
+        private DBwynikiDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.DataGridView wynikiDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
     }
 }
 
