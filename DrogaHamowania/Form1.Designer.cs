@@ -92,17 +92,18 @@
             // 
             // samochod
             // 
-            this.samochod.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.samochod.Location = new System.Drawing.Point(0, 353);
+            this.samochod.BackColor = System.Drawing.Color.Transparent;
+            this.samochod.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("samochod.BackgroundImage")));
+            this.samochod.Location = new System.Drawing.Point(8, 356);
             this.samochod.Name = "samochod";
-            this.samochod.Size = new System.Drawing.Size(78, 48);
+            this.samochod.Size = new System.Drawing.Size(73, 50);
             this.samochod.TabIndex = 29;
             this.samochod.TabStop = false;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel1.Location = new System.Drawing.Point(0, 407);
+            this.panel1.Location = new System.Drawing.Point(8, 407);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(801, 18);
             this.panel1.TabIndex = 28;
