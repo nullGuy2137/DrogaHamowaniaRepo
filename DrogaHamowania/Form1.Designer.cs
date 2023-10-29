@@ -94,7 +94,7 @@
             // 
             this.samochod.BackColor = System.Drawing.Color.Transparent;
             this.samochod.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("samochod.BackgroundImage")));
-            this.samochod.Location = new System.Drawing.Point(8, 356);
+            this.samochod.Location = new System.Drawing.Point(12, 356);
             this.samochod.Name = "samochod";
             this.samochod.Size = new System.Drawing.Size(73, 50);
             this.samochod.TabIndex = 29;
@@ -103,9 +103,11 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel1.Location = new System.Drawing.Point(8, 407);
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Location = new System.Drawing.Point(12, 412);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(801, 18);
+            this.panel1.Size = new System.Drawing.Size(800, 18);
             this.panel1.TabIndex = 28;
             // 
             // label6
@@ -335,7 +337,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(821, 450);
+            this.ClientSize = new System.Drawing.Size(820, 450);
             this.Controls.Add(this.wynikiDataGridView);
             this.Controls.Add(this.lblwynik);
             this.Controls.Add(this.label7);

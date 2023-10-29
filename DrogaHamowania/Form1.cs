@@ -20,7 +20,7 @@ namespace DrogaHamowania
             InitializeComponent();
         }
         bool rozpoczete;
-        int interwal = 30;
+        int interwal = 60;
         float calkowitaDrogaHamowania;
         float predkosc;
         float nachylenie, tarcie, reakcja;
@@ -36,13 +36,13 @@ namespace DrogaHamowania
         //to jest od animacji ruszania się samochodu, odpala się przez bool rozpoczete a ten się zemienia przez przyciski Start i stop
         private void timerAnimacjaHamowania_Tick(object sender, EventArgs e)
         {
-            if (rozpoczete == true && (samochod.Left+predkosc)<=720  )
+            if (rozpoczete == true && (samochod.Left + predkosc) <= Convert.ToInt32((calkowitaDrogaHamowania*1000)/800))
             {
                 
                 if (predkosc >= 0)
                 {
                     samochod.Left += Convert.ToInt32(predkosc);
-                    predkosc = predkosc - (-1 * (predkosc * predkosc) / calkowitaDrogaHamowania);
+                    predkosc -= 1;
 
                 }
                 //predkosc = predkosc - 1;
@@ -67,7 +67,7 @@ namespace DrogaHamowania
             reakcja = (float)(numReakcja.Value);
             calkowitaDrogaHamowania = (float)(0.278 * reakcja * predkosc) + (predkosc * predkosc) / (254 * (tarcie + nachylenie));
             AdddataToDatabase(predkosc, nachylenie, tarcie, reakcja, calkowitaDrogaHamowania.ToString("0.00"));
-            interwal = 30;
+            interwal = 60;
             rozpoczete = true;
             lblwynik.Text = "Calkowita droga hamowania wynosi: " + calkowitaDrogaHamowania.ToString("0.00")+"m";
             timerAnimacjaHamowania.Enabled = true;
@@ -100,7 +100,7 @@ namespace DrogaHamowania
         }
         private void btnStop_Click(object sender, EventArgs e)
         {
-            samochod.Left = 0;
+            samochod.Left = 12;
             rozpoczete = false;
             timerAnimacjaHamowania.Enabled = false;
         }
